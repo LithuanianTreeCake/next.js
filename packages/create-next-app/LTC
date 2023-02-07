@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My LIFF Page</title>
+  </head>
+  <body>
+    <h1>Welcome to my LIFF Page</h1>
+    <p>This is a sample LIFF page</p>
+    <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script>
+      window.onload = function () {
+        liff.init(
+          function (data) {
+            // Now you can call LIFF API
+            liff.getProfile().then(function (profile) {
+              alert("Hello, " + profile.displayName);
+            });
+          },
+          function (err) {
+            alert("Error getting LIFF data");
+          }
+        );
+      };
+    </script>
+  </body>
+</html>
